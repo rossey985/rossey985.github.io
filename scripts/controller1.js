@@ -1,3 +1,4 @@
+  
 // basic functionalities
 var client;
 
@@ -7,71 +8,53 @@ $('#btn-connect').on('click', function () {
   // connect
   console.log("connect button clicked..")
   client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
-  $("#status").text("Connecting to wss://test.mosquitto.org:8081/mqtt....")
-  $("#status").css("color", "green")
-  $("#status").css("font-style", "italic")
+  $("#connect-status").text("Connecting to wss://test.mosquitto.org:8081/mqt ....")
+  $("#connect-status").css("color", "orange")
+  $("#connect-status").css("font-weight", "bold")
   client.on("connect", function () {
     console.log("succ")
-    $("#status").text("Succesfully Connected!")
-    $("#status").css("color", "green")
-    $("#status").css("font-style", "italic")
+    $("#connect-status").text("Connected Successfully!")
+    $("#connect-status").css("color", "green")
+    $("#connect-status").css("font-weight", "bold")
     
   });
 
   $(".btn-disconnect").click(function () {
     client.end();
-    $("#status1").text("You Are Not Connected!")
-    $("#status1").css("color", "red")
+    $("#connect-status").text("You Are Disonnected to the Broker!")
+    $("#connect-status").css("color", "red")
   })
 
   
   $("#btn-publish").click(function () {
     var topic = $("#topic").val();
-    var message = $("#payload").val();
+    var message = $("#message").val();
     if (topic == "" || message == "") {
-      Swal.fire({
-        type: 'error',
-        title: 'All Input is Required',
-      })
+      alert("Requires Info!")
     } else {
       console.log("Published Topic: "+topic+ " Message: " + message)
       client.publish(topic, message);
-      Swal.fire({
-        type: 'success',
-        title: 'Publish Successfully!',
-      })
+      alert("Published Successfully!!")
     }
   })
 
-  $("#btn-subscibe").click(function () {
-    var topicsub = $("#topic-subscribe").val();
-    if (topicsub == "") {
-      Swal.fire({
-        type: 'error',
-        title: 'Topic is Required',
-      })
+  $("#btn-subscribe").click(function () {
+    var topsub = $("#topic-sub").val();
+    if (topsub == "") {
+      alert("Requires Info")
     } else {
-      console.log("Subcribed Topic: "+ topicsub)
-      client.subscribe(topicsub);
-      Swal.fire({
-        type: 'success',
-        title: 'Subscribe Successfully',
-      })
+      console.log("Subcribed Topic: "+ topsub)
+      client.subscribe(topsub);
+      alert("Subscribed Successfully!!")
     }
   })
   $("#btn-unsubscribe").click(function () {
-    var topicsub = $("#topic-subscribe").val();
-    if (topicsub == "") {
-      Swal.fire({
-        type: 'error',
-        title: 'Topic is Required',
-      })
+    var topsub = $("#topic-sub").val();
+    if (topsub == "") {
+      alert("Requires Topic")
     } else {
-      client.unsubscribe(topicsub);
-      Swal.fire({
-        type: 'success',
-        title: 'Unsubscribe Successfully',
-      })
+      client.unsubscribe(topsub);
+      alert("Unsubscribe Successfully")
     }
     $("#btn-unsubscribe").removeClass("alert-success")
     $("#btn-unsubscribe").addClass("alert-secondary")
@@ -86,29 +69,3 @@ $('#btn-connect').on('click', function () {
     
   })
 })
-// // advance functionalities
-// client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
-// client.subscribe("mqtt/demo", function (err){
-//   if (err){
-//     console.log(err);
-//   } else {
-//     console.log("subscribed")
-//   }
-// })
-
-// client.on("connect", function(){
-//     console.log("Successfully connected");
-// })
-
-// client.on("message", function (topic, payload) {
-//   console.log([topic, payload].join(": "));
-//   client.end();
-// })
-
-// client.publish("mqtt/demo", "hello world!", function(err){
-//   if (err){
-//     console.log(err)
-//   } else {
-//     console.log("published")
-//   }
-// })

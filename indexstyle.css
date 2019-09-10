@@ -1,9 +1,14 @@
 html body{
     height: 100%;
-    background-image: url(http://www.seekgif.com/uploads/water-bubbles-wallpapers-13.jpeg);
+    background-image: url(https://www.wallpaperbetter.com/wallpaper/288/36/39/anime-girls-gray-background-original-characters-720P-wallpaper-middle-size.jpg);
     background-size: cover;
     background-attachment: fixed;
    
+}
+h2 {
+    color: crimson;
+    font-size: 45px;
+    font-weight: bold;
 }
 .card{
     height: 330px;
@@ -14,13 +19,14 @@ html body{
 .form-control{
     border-width:5px;  
 }
-#status{
-    color:green;
+#connect-status{
+    color: blueviolet;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
 }
-#status1{
-    color: red;
+label.status1 {
+    font-size: 25px;
+    color: blue;
 }
 button{
     border-width:2px;  
@@ -42,7 +48,7 @@ h1{
     
     overflow-y: auto; 
     height: 200px;
-    background-color: pink;
+    background-color: gray;
     border: 5px solid black;
    
  }
