@@ -1,0 +1,68 @@
+html body{
+    height: 100%;
+    background-image: url(http://www.seekgif.com/uploads/water-bubbles-wallpapers-13.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+   
+}
+.card{
+    height: 330px;
+    color: lightseagreen;
+    font-weight: bold;
+    border:5px solid black; 
+}
+.form-control{
+    border-width:5px;  
+}
+#status{
+    color:green;
+    font-weight: bold;
+    font-size: 20px;
+}
+#status1{
+    color: red;
+}
+button{
+    border-width:2px;  
+    border-style:ridge;
+}
+h4{
+   color: black; 
+   text-align: center;
+   margin-left: 40%;
+   margin-right: 46%;
+   font-weight: bold;
+   
+}
+h1{
+    text-align: center;
+    padding-top: 20px;
+}
+ .table{
+    
+    overflow-y: auto; 
+    height: 200px;
+    background-color: pink;
+    border: 5px solid black;
+   
+ }
+table th{ 
+    position: sticky;
+    top: 0;
+    }
+
+table  { 
+    
+    border-collapse: collapse; 
+    width: 100%; 
+}
+td , tr { 
+    padding: 8px 16px;
+    border: 3px solid blue;
+    background-color: aqua;
+}
+th     { 
+    border: 2px;
+    color: red;
+    text-align: center;
+}

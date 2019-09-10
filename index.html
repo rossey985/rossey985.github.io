@@ -1,0 +1,122 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mows</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+
+
+<body>
+    <h1>MQTT over Websocket</h1>
+    <div class="container">
+        <br>
+        <div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="container">
+                <center>
+                    <div class="card-header">
+                        <div class="text-center h4">Broker</div>
+
+                    </div>
+                    <div class="card-body">
+                        <label for="input-broker-ws"> Address:</label>
+
+                        <input type="text" class="form-control" id="input-broker-ws" value="wss://test.mosquitto.org:8081/mqtt"><br>
+
+                        <button class="btn btn-primary btn-log" id="btn-connect">Connect</button>
+
+                        <button class="btn btn-primary btn -log" class="btn-disconnect">Disconnect</button>
+                    </div>
+                </center>
+                <label id ="status">Status:</label>
+
+                <center>
+                    <p id="status1"><b><i></i></b></p>
+                </center>
+
+            </div>
+        </div>
+    </div>
+   
+            
+            <!-- column 2 -->
+            <div class="col">
+                <div class="card">
+                    <div class="container">
+                        <center>
+                            <div class="card-header">
+                                <div class="text-center h4">Publisher</div>
+                            </div>
+                        </center>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="text-left">Topic:</label>
+                                <input type="text" class="form-control" id="topic-subscribe">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-justify">Payload:</label>
+                                <input type="text" class="form-control" id="payload">
+                            </div>
+                            <center>
+                                <button class="btn btn-primary bnt-log" id="btn-publish">Publish</button></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- column 3 -->
+            <div class="col">
+                <div class="card">
+                    <div class="container">
+                        <center>
+                            <div class="card-header">
+                                <div class="text-center h4">Subscriber</div>
+                            </div>
+                        </center>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="text-left">Topic:</label>
+                                <input type="text" class="form-control" id="topic-subscribe">
+                            </div>
+
+                            <center>
+                                <button class="btn btn-primary bnt-log" id="btn-subscibe" >Subscribe</button>
+                                <button class="btn btn-primary bnt-log" id="btn-unsubscribe" >Unsubscribe</button>
+                            </center>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+  <!-- row1 -->
+        <br>
+        <h4>BROKER</h4>
+        <div class="table">
+            <table>
+                <tr>
+                    <th class="card-header">Topic</th>
+                    <th class="card-header">Payload</th>
+                    <th class="card-header">Timestamp</th>
+                </tr>
+            </table>
+        </div>
+        
+        <script src="scripts/browserMqtt1.js"></script>
+        <script src="scripts/controller1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+
+</body>
+
+</html>
